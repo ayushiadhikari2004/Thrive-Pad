@@ -30,7 +30,7 @@ export default function Dashboard() {
             Welcome back,
             <span className="ml-3 text-indigo-600">{user?.displayName || 'User'}!</span>
           </h1>
-          <p className="mt-2 text-lg text-gray-500">Here’s your productivity overview</p>
+          <p className="mt-2 text-lg text-gray-500">Here's your productivity overview</p>
         </div>
 
         {/* Stats Grid */}

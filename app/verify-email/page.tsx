@@ -7,7 +7,7 @@ export default function VerifyEmailPage() {
           We've sent a verification link to your email.<br />
           Please check your inbox and click the link to activate your account.
         </p>
-        <p className="text-sm text-gray-400">Didn’t get the email? Check your spam folder or request another verification from your profile settings.</p>
+        <p className="text-sm text-gray-400">Didn't get the email? Check your spam folder or request another verification from your profile settings.</p>
       </div>
     </div>
   )
