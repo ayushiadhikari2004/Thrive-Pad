@@ -30,7 +30,7 @@ export default function Dashboard() {
             Welcome back,
             <span className="ml-3 text-indigo-600">{user?.displayName || 'User'}!</span>
           </h1>
-          <p className="mt-2 text-lg text-gray-500">Here's your productivity overview</p>
+          <p className="mt-2 text-lg text-gray-500">Here&apos;s your productivity overview</p>
         </div>
 
         {/* Stats Grid */}
@@ -79,7 +79,7 @@ export default function Dashboard() {
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col justify-between min-h-[120px]">
             <h3 className="font-semibold text-gray-800 text-lg mb-2">Upcoming Tasks</h3>
             {tasks.length === 0
-              ? <p className="text-gray-500">No upcoming tasks. <span className="font-semibold text-green-600">You're all caught up!</span></p>
+              ? <p className="text-gray-500">No upcoming tasks. <span className="font-semibold text-green-600">You&apos;re all caught up!</span></p>
               : (
                 <ul className="mt-3 space-y-1 list-inside list-disc">
                   {tasks.slice(0, 3).map(task => (
