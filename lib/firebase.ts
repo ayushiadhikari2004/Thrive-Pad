@@ -1,8 +1,9 @@
-// firebase.js (or firebase.ts)
+// lib/firebase.ts (or firebase.js)
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";             // Import getAuth
+import { getFirestore } from "firebase/firestore";   // Import getFirestore
 
-// Your web app's Firebase configuration, now using Vercel env variables
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -10,15 +11,18 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID // Optional
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID, // optional
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// If you use analytics, check for browser environment:
+
+const auth = getAuth(app);         // Initialize auth instance
+const db = getFirestore(app);      // Initialize Firestore instance
+
 let analytics;
-if (typeof window !== "undefined" && "measurementId" in firebaseConfig && firebaseConfig.measurementId) {
+if (typeof window !== "undefined" && firebaseConfig.measurementId) {
   analytics = getAnalytics(app);
 }
 
-export { app, analytics };
+// Export auth and db so other modules can import them
+export { app, auth, db, analytics };
